@@ -1,4 +1,3 @@
-kimbojs.github.com
-==================
+# kimbojs.github.com
 
 kimbojs website
