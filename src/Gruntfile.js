@@ -4,6 +4,12 @@ module.exports = function (grunt) {
   grunt.initConfig({
     outputDir: '../',
 
+    copy: {
+      img: {
+        files: [{ src: 'img/**', dest: '../' }]
+      }
+    },
+
     stylus: {
       compile: {
         files: {
@@ -66,6 +72,7 @@ module.exports = function (grunt) {
     }
   });
 
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-stylus');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-jade');
@@ -73,6 +80,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['stylus', 'cssmin', 'jade', 'coffee', 'uglify']);
+  grunt.registerTask('default', ['copy', 'stylus', 'cssmin', 'jade', 'coffee', 'uglify']);
 
 };
